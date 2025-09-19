@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enlaces Personalizados</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      width: 100%;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .category {
+      background: #3c3c6e;
+      margin: 10px 0;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    .category-header h2 {
+      margin: 0;
+    }
+    .edit-btn, .add-btn, .delete-btn, .edit-link-btn, .delete-link-btn {
+      margin-left: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      background: #6c63ff;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      padding: 2px 6px;
+    }
+    .delete-btn, .delete-link-btn {
+      background: #e74c3c;
+    }
+    .links {
+      margin-top: 10px;
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .link-item a {
+      flex-grow: 1;
+      text-decoration: none;
+      color: #fff;
+      background: #5755d9;
+      padding: 8px;
+      border-radius: 6px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .link-item a:hover {
+      background: #413fc7;
+    }
+    .add-section-btn {
+      display: block;
+      margin: 20px auto;
+      background: #00b894;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Mis Enlaces</h1>
+
+    <div id="categories">
+      <div class="category draggable" draggable="true">
+        <div class="category-header">
+          <h2>YouTube</h2>
+          <div>
+            <button class="edit-btn">✏️</button>
+            <button class="add-btn">＋</button>
+          </div>
+        </div>
+        <div class="links">
+          <a href="https://www.youtube.com/">Página principal</a>
+          <a href="https://www.youtube.com/@CreeperLol">Mi canal</a>
+          <a href="https://www.youtube.com/feed/subscriptions">Suscripciones</a>
+        </div>
+      </div>
+
+      <div class="category draggable" draggable="true">
+        <div class="category-header">
+          <h2>Twitter</h2>
+          <div>
+            <button class="edit-btn">✏️</button>
+            <button class="add-btn">＋</button>
+          </div>
+        </div>
+        <div class="links">
+          <a href="https://twitter.com/home">Página principal</a>
+          <a href="https://x.com/CreeperLoles">Mi cuenta</a>
+          <a href="https://twitter.com/messages">Mensajes directos</a>
+          <a href="https://twitter.com/notifications">Notificaciones</a>
+          <a href="https://x.com/i/bookmarks">Guardados</a>
+        </div>
+      </div>
+
+      <div class="category draggable" draggable="true">
+        <div class="category-header">
+          <h2>Twitch</h2>
+          <div>
+            <button class="edit-btn">✏️</button>
+            <button class="add-btn">＋</button>
+          </div>
+        </div>
+        <div class="links">
+          <a href="https://www.twitch.tv/">Página principal</a>
+          <a href="https://www.twitch.tv/auronplay">Canal de Auronplay</a>
+          <a href="https://www.twitch.tv/">Mi canal</a>
+        </div>
+      </div>
+
+      <div class="category draggable" draggable="true">
+        <div class="category-header">
+          <h2>Microsoft Rewards</h2>
+          <div>
+            <button class="edit-btn">✏️</button>
+            <button class="add-btn">＋</button>
+          </div>
+        </div>
+        <div class="links">
+          <a href="https://rewards.microsoft.com/">Página principal</a>
+          <a href="https://www.bing.com/">Bing</a>
+        </div>
+      </div>
+
+      <div class="category draggable" draggable="true">
+        <div class="category-header">
+          <h2>IA</h2>
+          <div>
+            <button class="edit-btn">✏️</button>
+            <button class="add-btn">＋</button>
+          </div>
+        </div>
+        <div class="links">
+          <a href="https://chat.openai.com/">ChatGPT</a>
+          <a href="https://grok.com/">Grok</a>
+          <a href="https://gemini.google.com/">Gemini</a>
+          <a href="https://copilot.com/">Copilot</a>
+        </div>
+        <div class="links">
+          <h3>Chatbots</h3>
+          <a href="https://beta.character.ai/">Character AI</a>
+          <a href="https://polybuzz.com/">Polybuzz</a>
+          <a href="https://spicychat.ai/my-chatbots">Spicychat</a>
+        </div>
+      </div>
+
+      <div class="category draggable" draggable="true">
+        <div class="category-header">
+          <h2>Herramientas</h2>
+          <div>
+            <button class="edit-btn">✏️</button>
+            <button class="add-btn">＋</button>
+          </div>
+        </div>
+        <div class="links">
+          <a href="https://translate.google.com/">Traductor de Google</a>
+          <a href="https://www.google.com/">Google</a>
+          <a href="https://images.google.com/">Google Images</a>
+          <a href="https://howlongtobeat.com/">HowLongToBeat</a>
+          <a href="https://www.metacritic.com/">Metacritic</a>
+          <a href="https://internetpasoapaso.com/simbolos/#matematicas">Símbolos</a>
+        </div>
+      </div>
+    </div>
+
+    <button class="add-section-btn">＋ Añadir Sección</button>
+  </div>
+
+  <script>
+    const STORAGE_KEY = 'categoriesData_v2';
+    const container = document.getElementById('categories');
+
+    function save() {
+      localStorage.setItem(STORAGE_KEY, container.innerHTML);
+    }
+
+    function normalizeLinks() {
+      // Wrap plain <a> into .link-item with edit/delete buttons
+      document.querySelectorAll('.links').forEach(links => {
+        const children = Array.from(links.childNodes);
+        children.forEach(node => {
+          if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'A') {
+            // already wrapped?
+            if (node.parentElement && node.parentElement.classList.contains('link-item')) return;
+            const div = document.createElement('div');
+            div.className = 'link-item';
+            const a = node.cloneNode(true);
+            a.setAttribute('target','_blank');
+            a.setAttribute('rel','noopener noreferrer');
+            const editBtn = document.createElement('button');
+            editBtn.className = 'edit-link-btn';
+            editBtn.textContent = '✏️';
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'delete-link-btn';
+            deleteBtn.textContent = '🗑️';
+            div.appendChild(a);
+            div.appendChild(editBtn);
+            div.appendChild(deleteBtn);
+            links.replaceChild(div, node);
+          }
+        });
+      });
+
+      // Ensure each category header has a delete button
+      document.querySelectorAll('.category').forEach(cat => {
+        const controls = cat.querySelector('.category-header > div');
+        if (controls && !controls.querySelector('.delete-btn')) {
+          const del = document.createElement('button');
+          del.className = 'delete-btn';
+          del.textContent = '🗑️';
+          controls.appendChild(del);
+        }
+      });
+    }
+
+    function attachEvents() {
+      normalizeLinks();
+
+      // Toggle links visibility
+      document.querySelectorAll('.category-header').forEach(header => {
+        header.onclick = e => {
+          if (e.target.tagName === 'BUTTON') return;
+          const links = header.nextElementSibling;
+          if (!links) return;
+          links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+        };
+      });
+
+      // Edit category name
+      document.querySelectorAll('.edit-btn').forEach(btn => {
+        btn.onclick = e => {
+          e.stopPropagation();
+          const category = btn.closest('.category');
+          const h2 = category.querySelector('h2');
+          const v = prompt('Nuevo nombre de categoría:', h2.innerText);
+          if (v !== null) {
+            h2.innerText = v;
+            save();
+          }
+        };
+      });
+
+      // Delete category
+      document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.onclick = e => {
+          e.stopPropagation();
+          if (confirm('Eliminar esta categoría?')) {
+            const cat = btn.closest('.category');
+            cat.remove();
+            save();
+          }
+        };
+      });
+
+      // Add link to category
+      document.querySelectorAll('.add-btn').forEach(btn => {
+        btn.onclick = e => {
+          e.stopPropagation();
+          const links = btn.closest('.category').querySelector('.links');
+          const name = prompt('Nombre del nuevo enlace:');
+          if (!name) return;
+          const url = prompt('URL del nuevo enlace:');
+          if (!url) return;
+          const div = document.createElement('div');
+          div.className = 'link-item';
+          div.innerHTML = `<a href="${url}" target="_blank" rel="noopener noreferrer">${name}</a><button class="edit-link-btn">✏️</button><button class="delete-link-btn">🗑️</button>`;
+          links.appendChild(div);
+          save();
+          attachEvents();
+        };
+      });
+
+      // Edit link
+      document.querySelectorAll('.edit-link-btn').forEach(btn => {
+        btn.onclick = e => {
+          e.stopPropagation();
+          const a = btn.parentElement.querySelector('a');
+          const newName = prompt('Nuevo nombre del enlace:', a.innerText);
+          if (newName === null) return;
+          const newUrl = prompt('Nueva URL del enlace:', a.href);
+          if (newUrl === null) return;
+          a.innerText = newName;
+          a.href = newUrl;
+          save();
+        };
+      });
+
+      // Delete link
+      document.querySelectorAll('.delete-link-btn').forEach(btn => {
+        btn.onclick = e => {
+          e.stopPropagation();
+          if (confirm('Eliminar este enlace?')) {
+            btn.parentElement.remove();
+            save();
+          }
+        };
+      });
+
+      // Drag & drop for categories (preserve existing behavior)
+      let dragged = null;
+      container.addEventListener('dragstart', e => {
+        const cat = e.target.closest('.category');
+        if (!cat) return;
+        dragged = cat;
+        cat.style.opacity = '0.5';
+      });
+      container.addEventListener('dragend', e => {
+        if (dragged) dragged.style.opacity = '';
+        dragged = null;
+        save();
+      });
+      container.addEventListener('dragover', e => {
+        e.preventDefault();
+        const target = e.target.closest('.category');
+        if (target && dragged && target !== dragged) {
+          const rect = target.getBoundingClientRect();
+          const next = (e.clientY - rect.top) / (rect.bottom - rect.top) > 0.5;
+          container.insertBefore(dragged, next ? target.nextSibling : target);
+        }
+      });
+    }
+
+    // Add new section
+    document.querySelector('.add-section-btn').addEventListener('click', () => {
+      const name = prompt('Nombre de la nueva sección:');
+      if (!name) return;
+      const category = document.createElement('div');
+      category.className = 'category draggable';
+      category.setAttribute('draggable','true');
+      category.innerHTML = `
+        <div class="category-header">
+          <h2>${name}</h2>
+          <div>
+            <button class="edit-btn">✏️</button>
+            <button class="add-btn">＋</button>
+          </div>
+        </div>
+        <div class="links"></div>`;
+      container.appendChild(category);
+      // ensure delete button is added and events attached
+      normalizeLinks();
+      attachEvents();
+      save();
+    });
+
+    // Initial load
+    (function init(){
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) container.innerHTML = saved;
+      normalizeLinks();
+      attachEvents();
+    })();
+  </script>
+</body>
+</html>
